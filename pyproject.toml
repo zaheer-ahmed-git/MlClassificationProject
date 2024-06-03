@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "mlclassificationproject"
+version = "0.1.0"
+description = ""
+authors = ["NxtGen-Dev-ZAH <zaheer.ahmad.contact@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+opencv-python = "^4.9.0.80"
+numpy = "^1.26.4"
+tensorflow = "^2.16.1"
+scikit-learn = "^1.5.0"
+keras = "^3.3.3"
+requests = "^2.32.3"
+fastapi = "^0.111.0"
+uvicorn = "^0.30.0"
+transformers = "^4.41.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
