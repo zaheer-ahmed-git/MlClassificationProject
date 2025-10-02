@@ -1,2 +1,28 @@
 vehicle_classifier_ZAM_main.h5
+*.h5
+!CaipProj/**/*.h5
 
+__pycache__/
+*.py[cod]
+.Python
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Training / logs
+results/
+logs/
+*.log
+.coverage
+htmlcov/
+
+# Env
+.env
+.env.local
