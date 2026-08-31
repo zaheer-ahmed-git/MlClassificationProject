@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0.0",
+  "preprocessor_id": "ahs-training-fold-v1",
+  "dataset_release": "public-corpus-v0.2.0-ahs",
+  "split_id": "ahs-grouped-temporal-v1",
+  "task_id": "future_routine_cost_proxy_v1",
+  "fit_contract": {
+    "fit_split": "training",
+    "numeric": "median imputation then population-standard scaling",
+    "categorical": "training-vocabulary one-hot encoding with fixed missing and unknown buckets",
+    "missingness": "one indicator per candidate feature; value representation excluded above 40 percent training missingness",
+    "target_imputation": "prohibited",
+    "target_clipping": "prohibited",
+    "high_cost": "nearest-rank 80th percentile of training labels; greater-than-or-equal classification"
+  },
+  "artifacts": {
+    "preprocessor.json": "fitted parameters, training-only fit evidence, feature columns, and policies",
+    "feature_matrix.csv": "one row per frozen split snapshot; snapshot_id plus transformed feature columns only",
+    "target_metadata.csv": "unaltered target, split, cap-sensitivity metadata, and training-derived high-cost flag",
+    "preprocessing_manifest.json": "input and output hashes, counts, status, and prohibited claims",
+    "qa_preprocessing_report.json": "recomputed aggregate audit results"
+  },
+  "target_metadata_fields": {
+    "snapshot_id": "uuid string; foreign key to the release snapshot and split assignment",
+    "split_name": "enum: training, validation, test",
+    "task_id": "future_routine_cost_proxy_v1",
+    "target_amount_local_nominal": "unaltered nonnegative AHS label in nominal USD",
+    "target_currency": "USD",
+    "feature_wave_year": "earlier AHS wave",
+    "label_wave_year": "next adjacent AHS wave",
+    "source_response_maximum_usd": "10000 through 2021 labels; 100000 for 2023 labels",
+    "response_cap_regime": "frozen cap-regime marker from the split",
+    "include_in_primary_metrics": "frozen primary-view flag",
+    "include_in_pre_2023_cap_sensitivity": "frozen sensitivity-view flag",
+    "high_cost_threshold_version": "ahs-high-cost-training-top20-v1",
+    "is_high_cost": "target greater than or equal to the training-only threshold",
+    "target_was_imputed": "always false",
+    "target_was_clipped": "always false"
+  },
+  "distribution": "local-analysis-only",
+  "model_fitted": false
+}

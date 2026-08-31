@@ -1,0 +1,63 @@
+experiment_id = "ahs-model-tuning-v1"
+experiment_contract_version = "1.0.0"
+dataset_release = "public-corpus-v0.2.0-ahs"
+split_id = "ahs-grouped-temporal-v1"
+preprocessor_id = "ahs-feature-engineering-v1"
+task_id = "future_routine_cost_proxy_v1"
+fit_split = "training"
+selection_split = "validation"
+selection_view = "primary"
+evaluation_splits = ["validation", "test"]
+evaluation_views = ["primary", "pre_2023_cap_sensitivity"]
+target_currency = "USD"
+high_cost_threshold_version = "ahs-high-cost-training-top20-v1"
+high_cost_threshold_usd = 1428.0
+metric_primary = "mae"
+metrics = ["mae", "rmse", "high_cost_precision", "high_cost_recall", "high_cost_f1"]
+prediction_clipping = "none"
+sample_weighting = "none"
+hyperparameter_search = true
+model_selection = true
+selection_metric = "mae"
+random_seed = 20260810
+distribution = "local-analysis-only"
+comparison_baseline_experiment_id = "ahs-feature-engineering-v1"
+
+[baselines.training_median]
+rule = "constant_median_of_training_labels"
+
+[baselines.type_median]
+group_feature = "building_type_code"
+rule = "training_label_median_by_training_fitted_building_type"
+fallback = "global_training_median_for_missing_or_unseen_type"
+
+[baselines.prior_cost]
+feature = "prior_routine_maintenance_usd"
+rule = "unscaled_earlier_wave_prior_routine_cost_when_nonmissing"
+fallback = "global_training_median_when_prior_cost_missing"
+
+[models.linear_regression]
+estimator = "sklearn.linear_model.LinearRegression"
+fit_intercept = true
+tune = false
+
+[models.random_forest]
+estimator = "sklearn.ensemble.RandomForestRegressor"
+tune = true
+n_jobs = 1
+
+[models.random_forest.search_grid]
+n_estimators = [300, 600]
+max_depth = [10, 20]
+min_samples_leaf = [1, 5, 10]
+max_features = ["sqrt", 0.5, 1.0]
+
+[models.gradient_boosting]
+estimator = "sklearn.ensemble.HistGradientBoostingRegressor"
+tune = true
+
+[models.gradient_boosting.search_grid]
+max_iter = [100, 200, 400]
+learning_rate = [0.03, 0.05, 0.1]
+max_depth = [2, 3, 4]
+min_samples_leaf = [5, 10, 20]

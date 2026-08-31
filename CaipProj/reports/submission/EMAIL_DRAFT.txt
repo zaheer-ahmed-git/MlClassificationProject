@@ -1,0 +1,21 @@
+Subject: CAIP Final Project Batch 8
+
+Dear NCAI team,
+
+Please find attached the final project submission for Batch 8:
+
+1. caip_final_report.pdf : final report (text, figures, and analysis)
+2. caip_code_annex.zip : complete Python source package (code annex)
+3. caip_final_source.py : separate Python source file for testing
+
+Project title: Maintenance Cost Prediction for WAPDA Staff-Colony Housing
+
+The analytical dataset is built on the WAPDA staff-colony data model (WASC
+residential inventory). Training used public AHS records mapped onto that
+model because linked WAPDA work-order extracts were not available because of strict privacy policy and data governence.
+
+Please confirm receipt.
+
+Regards,
+Saeed Ahmad 
+

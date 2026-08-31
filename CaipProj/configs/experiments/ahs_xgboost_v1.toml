@@ -1,0 +1,47 @@
+experiment_id = "ahs-xgboost-v1"
+experiment_contract_version = "1.0.0"
+dataset_release = "public-corpus-v0.2.0-ahs"
+split_id = "ahs-grouped-temporal-v1"
+preprocessor_id = "ahs-training-fold-v1"
+task_id = "future_routine_cost_proxy_v1"
+fit_split = "training"
+evaluation_splits = ["validation", "test"]
+evaluation_views = ["primary", "pre_2023_cap_sensitivity"]
+target_currency = "USD"
+high_cost_threshold_version = "ahs-high-cost-training-top20-v1"
+high_cost_threshold_usd = 1428.0
+metric_primary = "mae"
+metrics = ["mae", "rmse", "high_cost_precision", "high_cost_recall", "high_cost_f1"]
+prediction_clipping = "none"
+sample_weighting = "none"
+hyperparameter_search = false
+model_selection = false
+random_seed = 20260810
+distribution = "local-analysis-only"
+
+[baselines.training_median]
+rule = "constant_median_of_training_labels"
+
+[baselines.type_median]
+group_feature = "building_type_code"
+rule = "training_label_median_by_training_fitted_building_type"
+fallback = "global_training_median_for_missing_or_unseen_type"
+
+[baselines.prior_cost]
+feature = "prior_routine_maintenance_usd"
+rule = "unscaled_earlier_wave_prior_routine_cost_when_nonmissing"
+fallback = "global_training_median_when_prior_cost_missing"
+
+[models.xgboost]
+estimator = "xgboost.XGBRegressor"
+objective = "reg:squarederror"
+n_estimators = 200
+learning_rate = 0.05
+max_depth = 6
+min_child_weight = 20
+subsample = 1.0
+colsample_bytree = 1.0
+reg_lambda = 1.0
+reg_alpha = 0.0
+tree_method = "hist"
+n_jobs = 1

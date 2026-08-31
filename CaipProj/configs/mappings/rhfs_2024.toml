@@ -1,0 +1,232 @@
+mapping_version = "rhfs_2024_v1"
+source_id = "rhfs_2024"
+source_release = "v1.0"
+source_grain = "one rental property"
+native_key = "CONTROLPUF"
+native_key_export_policy = "sha256 namespace token only"
+label_source_field = "OPREP"
+label_period_start = "2023-01-01"
+label_period_end = "2023-12-31"
+label_currency = "USD"
+label_task = "annual_cost_estimation_v1"
+sentinel_not_applicable = "-8"
+sentinel_not_reported = "-9"
+zero_acceptance_rule = "OPREP equals zero and PROPANS equals 1"
+source_edit_flag = "JPREP"
+reconciliation_rule = "OPREP must not exceed OPEX_R when both are usable"
+capital_policy = "CAPEX fields excluded from label"
+appliance_policy = "not separable; label flagged as proxy"
+forecast_claim = "cross-sectional held-out estimation only"
+numeric_normalization = "finite non-sentinel source number; integers serialized without decimal suffix"
+code_normalization = "retain valid source code; do not infer labels from code text"
+missingness_policy = "-8 to not_applicable; -9 or blank to not_reported"
+
+[[fields]]
+source = "OPREP"
+target = "target_amount_local_nominal"
+type = "decimal"
+role = "label"
+
+[[fields]]
+source = "NUMUNITS_R"
+target = "unit_count"
+type = "number"
+role = "feature"
+
+[[fields]]
+source = "NUMCAT_R"
+target = "unit_count_category_code"
+type = "categorical_code"
+role = "feature"
+
+[[fields]]
+source = "NUMBLD_R"
+target = "building_count"
+type = "number"
+role = "feature"
+
+[[fields]]
+source = "BROOMS"
+target = "bedroom_count"
+type = "number"
+role = "feature"
+
+[[fields]]
+source = "BED0_R"
+target = "studio_unit_count"
+type = "number"
+role = "feature"
+
+[[fields]]
+source = "BED1_R"
+target = "one_bedroom_unit_count"
+type = "number"
+role = "feature"
+
+[[fields]]
+source = "BED2_R"
+target = "two_bedroom_unit_count"
+type = "number"
+role = "feature"
+
+[[fields]]
+source = "BED3_R"
+target = "three_plus_bedroom_unit_count"
+type = "number"
+role = "feature"
+
+[[fields]]
+source = "YRNEWBLG_R"
+target = "construction_year_band_code"
+type = "categorical_code"
+role = "feature"
+
+[[fields]]
+source = "YRPROPREHAB_R"
+target = "rehabilitation_year_band_code"
+type = "categorical_code"
+role = "feature"
+
+[[fields]]
+source = "PROPCON"
+target = "condominium_code"
+type = "categorical_code"
+role = "feature"
+
+[[fields]]
+source = "PROPTOWN"
+target = "townhouse_or_rowhouse_code"
+type = "categorical_code"
+role = "feature"
+
+[[fields]]
+source = "COMPLEX"
+target = "property_complex_code"
+type = "categorical_code"
+role = "feature"
+
+[[fields]]
+source = "COMMSPACE"
+target = "commercial_space_code"
+type = "categorical_code"
+role = "feature"
+
+[[fields]]
+source = "OFFSTPARK"
+target = "off_street_parking_code"
+type = "categorical_code"
+role = "feature"
+
+[[fields]]
+source = "OWNENT"
+target = "ownership_entity_code"
+type = "categorical_code"
+role = "feature"
+
+[[fields]]
+source = "MNGMNT"
+target = "management_arrangement_code"
+type = "categorical_code"
+role = "feature"
+
+[[fields]]
+source = "HRSMNGMNT"
+target = "management_hours"
+type = "number"
+role = "feature"
+
+[[fields]]
+source = "RCONTROL"
+target = "rent_control_status_code"
+type = "categorical_code"
+role = "feature"
+
+[[fields]]
+source = "RSUBSIDY"
+target = "government_subsidy_code"
+type = "categorical_code"
+role = "feature"
+
+[[fields]]
+source = "LOWINAREA"
+target = "low_income_area_code"
+type = "categorical_code"
+role = "feature"
+
+[[fields]]
+source = "HISTORIC"
+target = "historic_property_code"
+type = "categorical_code"
+role = "feature"
+
+[[fields]]
+source = "IELEC"
+target = "electricity_in_rent_code"
+type = "categorical_code"
+role = "feature"
+
+[[fields]]
+source = "IGAS"
+target = "gas_in_rent_code"
+type = "categorical_code"
+role = "feature"
+
+[[fields]]
+source = "IWATER"
+target = "water_in_rent_code"
+type = "categorical_code"
+role = "feature"
+
+[[fields]]
+source = "ISEWER"
+target = "sewer_in_rent_code"
+type = "categorical_code"
+role = "feature"
+
+[[fields]]
+source = "ITRASH"
+target = "trash_in_rent_code"
+type = "categorical_code"
+role = "feature"
+
+[[fields]]
+source = "IPARKING"
+target = "parking_in_rent_code"
+type = "categorical_code"
+role = "feature"
+
+[[fields]]
+source = "IPOOL"
+target = "pool_in_rent_code"
+type = "categorical_code"
+role = "feature"
+
+[[fields]]
+source = "TRENOC_R"
+target = "occupied_unit_count"
+type = "number"
+role = "feature"
+
+[[fields]]
+source = "TRENVA_R"
+target = "vacant_unit_count"
+type = "number"
+role = "feature"
+
+[[fields]]
+source = "MRKTVAL_R"
+target = "market_value_usd"
+type = "number"
+role = "feature"
+
+[[fields]]
+source = "MRKTVALPU_R"
+target = "market_value_per_unit_usd"
+type = "number"
+role = "feature"
+
+[[fields]]
+source = "WEIGHT"
+target = "survey_weight"
+type = "number"
+role = "descriptive_weight"

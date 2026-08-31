@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "experiment_id": "ahs-baselines-models-log1p-v1",
+  "dataset_release": "public-corpus-v0.2.0-ahs",
+  "split_id": "ahs-grouped-temporal-v1",
+  "preprocessor_id": "ahs-training-fold-v1",
+  "task_id": "future_routine_cost_proxy_v1",
+  "comparison_baseline_experiment_id": "ahs-baselines-models-v1",
+  "fit_contract": {
+    "fit_split": "training",
+    "held_out_labels_used_for_fit": false,
+    "hyperparameter_search": false,
+    "model_selection": false,
+    "prediction_clipping": "none",
+    "target_transform": "log1p",
+    "prediction_inverse_transform": "expm1",
+    "baselines_fit_on": "original_usd_labels"
+  },
+  "systems": [
+    "training_median",
+    "type_median",
+    "prior_cost",
+    "linear_regression",
+    "random_forest",
+    "gradient_boosting"
+  ],
+  "evaluation": {
+    "splits": ["validation", "test"],
+    "views": ["primary", "pre_2023_cap_sensitivity"],
+    "primary_metric": "mae",
+    "target_currency": "USD",
+    "metrics_evaluated_in": "original_usd",
+    "high_cost_threshold_version": "ahs-high-cost-training-top20-v1",
+    "high_cost_threshold_usd": 1428.0
+  },
+  "artifacts": {
+    "baseline_parameters.json": "training-label-only baseline fit state and rules in original USD",
+    "models/*.joblib": "locally fitted scikit-learn estimator trained on log1p(USD); load only after checksum verification",
+    "predictions.csv": "local row-level predictions in original USD after expm1; no native AHS identifier",
+    "metrics.json": "aggregate held-out metrics in original USD for both frozen evaluation views",
+    "experiment_manifest.json": "source hashes, fit evidence, parameters, versions, and output hashes",
+    "qa_experiment_report.json": "recomputed artifact, fit-boundary, metric, and reload checks"
+  },
+  "distribution": "local-analysis-only",
+  "is_wapda_forecast": false
+}

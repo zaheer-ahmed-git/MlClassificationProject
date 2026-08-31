@@ -1,0 +1,27 @@
+review_id = "ahs-diagnostic-review-v1"
+review_contract_version = "1.0.0"
+dataset_release = "public-corpus-v0.2.0-ahs"
+split_id = "ahs-grouped-temporal-v1"
+preprocessor_id = "ahs-training-fold-v1"
+experiment_id = "ahs-baselines-models-v1"
+task_id = "future_routine_cost_proxy_v1"
+high_cost_threshold_usd = 1428.0
+evaluation_splits = ["validation", "test"]
+evaluation_views = ["primary", "pre_2023_cap_sensitivity"]
+systems = [
+  "training_median",
+  "type_median",
+  "prior_cost",
+  "linear_regression",
+  "random_forest",
+  "gradient_boosting",
+]
+subgroup_dimensions = ["building_type_code", "division_code", "target_band", "label_wave_year"]
+target_bands = ["zero", "positive_below_threshold", "high_cost"]
+minimum_subgroup_rows = 50
+survey_weight_field = "survey_weight"
+model_fitting = false
+hyperparameter_search = false
+model_selection = false
+promotion_authorized = false
+distribution = "local-analysis-only"

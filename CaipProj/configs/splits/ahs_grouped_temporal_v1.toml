@@ -1,0 +1,31 @@
+split_id = "ahs-grouped-temporal-v1"
+split_contract_version = "1.0.0"
+dataset_release = "public-corpus-v0.2.0-ahs"
+task_id = "future_routine_cost_proxy_v1"
+group_field = "analytical_asset_id"
+assignment_basis = "latest_eligible_label_wave_by_asset"
+same_asset_all_transitions = true
+test_terminal_label_wave = 2023
+validation_terminal_label_wave = 2021
+training_terminal_label_waves = [2017, 2019]
+strata_report_fields = ["division_code", "building_type_code"]
+cap_sensitivity_excluded_label_wave = 2023
+target_clipping = "prohibited"
+threshold_version = "not_assigned_pre_modeling"
+semantic_decision_id = "ahs-semantic-license-v1"
+semantic_decision_path = "Documentation/AHSSemanticLicenseDecision.md"
+semantic_decision_sha256 = "14974f688a3b5f213b1a79448bd6f34c0002108b8feda0ff97797d2a807219b9"
+distribution = "local-analysis-only"
+
+[terminal_wave_assignment]
+"2017" = "training"
+"2019" = "training"
+"2021" = "validation"
+"2023" = "test"
+
+[response_cap_regime]
+"2017" = "pre_2023_usd_10000"
+"2019" = "pre_2023_usd_10000"
+"2021" = "pre_2023_usd_10000"
+"2023" = "wave_2023_usd_100000"
+

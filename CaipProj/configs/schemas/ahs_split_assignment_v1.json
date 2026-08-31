@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0.0",
+  "split_id": "ahs-grouped-temporal-v1",
+  "dataset_release": "public-corpus-v0.2.0-ahs",
+  "task_id": "future_routine_cost_proxy_v1",
+  "grain": "one AHS eligible adjacent-wave feature-label transition",
+  "primary_key": ["split_assignment_id"],
+  "foreign_keys": {
+    "snapshot_id": "public-corpus-v0.2.0-ahs.property_period_snapshot.snapshot_id",
+    "analytical_asset_id": "public-corpus-v0.2.0-ahs.source_asset_bridge.analytical_asset_id"
+  },
+  "group_contract": "all transitions for one analytical_asset_id inherit one split based on that asset's latest eligible label wave",
+  "terminal_wave_assignment": {
+    "2017": "training",
+    "2019": "training",
+    "2021": "validation",
+    "2023": "test"
+  },
+  "cap_sensitivity": {
+    "primary_view": "all eligible transitions with their recorded source response maximum",
+    "sensitivity_view": "exclude label_wave_year=2023",
+    "target_clipping": "prohibited"
+  },
+  "distribution": "local-analysis-only",
+  "fields": {
+    "split_assignment_id": "uuid string; deterministic assignment key",
+    "dataset_release": "string",
+    "split_id": "string",
+    "task_id": "string",
+    "snapshot_id": "uuid string",
+    "analytical_asset_id": "tokenized string",
+    "asset_group_id": "tokenized string; equal to analytical_asset_id",
+    "split_name": "enum: training, validation, test",
+    "asset_terminal_label_wave": "integer year",
+    "feature_wave_year": "integer year",
+    "label_wave_year": "integer year",
+    "division_code": "source categorical code or empty",
+    "building_type_code": "source categorical code or empty",
+    "response_cap_regime": "enum: pre_2023_usd_10000, wave_2023_usd_100000",
+    "include_in_primary_metrics": "boolean; always true",
+    "include_in_pre_2023_cap_sensitivity": "boolean; false only for 2023 labels",
+    "threshold_version": "string; not_assigned_pre_modeling"
+  },
+  "prohibited_fields": [
+    "CONTROL",
+    "target_amount_local_nominal",
+    "resident_name",
+    "address"
+  ]
+}
+

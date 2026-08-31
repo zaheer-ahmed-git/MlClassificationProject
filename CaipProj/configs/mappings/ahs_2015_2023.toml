@@ -1,0 +1,53 @@
+mapping_version = "ahs_adjacent_wave_v1"
+source_id = "ahs_2015_2023"
+source_release = "official_2015_2023"
+source_grain = "one housing unit in one biennial national PUF wave"
+waves = [2015, 2017, 2019, 2021, 2023]
+native_key = "CONTROL"
+native_key_evidence = "Sample Case History documentation states CONTROL uniquely identifies a sample case and merges to AHS PUFs"
+native_key_export_policy = "sha256 namespace token only"
+feature_wave_rule = "eligible completed interview in the earlier adjacent wave"
+label_wave_rule = "eligible completed owner interview in the later adjacent wave"
+label_source_field = "MAINTAMT"
+label_edit_flag = "JMAINTAMT"
+label_task = "future_routine_cost_proxy_v1"
+label_currency = "USD"
+label_period_semantics = "typical-year amount reported in the later biennial wave"
+label_response_maximum_through_2021_usd = 10000
+label_response_maximum_2023_usd = 100000
+forecast_claim = "later-wave proxy task only; not an operational next-12-month WAPDA label"
+modeling_view = "AHS only; must not be stacked with RHFS labels"
+eligibility_feature = "INTSTATUS=1 and usable YRBUILT, UNITSIZE, TOTROOMS, BATHROOMS, BLD"
+eligibility_label = "INTSTATUS=1, TENURE in {1,2}, usable nonnegative MAINTAMT"
+sentinels = ["-6", "-7", "-8", "-9", "N"]
+target_imputation = "prohibited"
+redistribution = "local-analysis-only until license review"
+
+[fields]
+tenure_code = { source = "TENURE", type = "categorical_code" }
+building_type_code = { source = "BLD", type = "categorical_code" }
+year_built = { source = "YRBUILT", type = "number" }
+unit_size_code = { source = "UNITSIZE", type = "categorical_code" }
+total_rooms = { source = "TOTROOMS", type = "number" }
+bathrooms_code = { source = "BATHROOMS", type = "categorical_code" }
+bedrooms = { source = "BEDROOMS", type = "number" }
+unit_floors = { source = "UNITFLOORS", type = "number" }
+foundation_type_code = { source = "FOUNDTYPE", type = "categorical_code" }
+garage_code = { source = "GARAGE", type = "categorical_code" }
+heating_type_code = { source = "HEATTYPE", type = "categorical_code" }
+heating_fuel_code = { source = "HEATFUEL", type = "categorical_code" }
+primary_air_conditioning_code = { source = "ACPRIMARY", type = "categorical_code" }
+sewage_type_code = { source = "SEWTYPE", type = "categorical_code" }
+lot_size_code = { source = "LOTSIZE", type = "categorical_code" }
+owns_lot_code = { source = "OWNLOT", type = "categorical_code" }
+roof_leak_code = { source = "LEAKOROOF", type = "categorical_code" }
+roof_hole_code = { source = "ROOFHOLE", type = "categorical_code" }
+roof_sag_code = { source = "ROOFSAG", type = "categorical_code" }
+roof_shingle_condition_code = { source = "ROOFSHIN", type = "categorical_code" }
+sewage_breakdown_code = { source = "SEWBREAK", type = "categorical_code" }
+household_income_usd = { source = "HINCP", type = "number" }
+prior_routine_maintenance_usd = { source = "MAINTAMT", type = "number" }
+division_code = { source = "DIVISION", type = "categorical_code" }
+cbsa_code = { source = "OMB13CBSA", type = "categorical_code" }
+survey_weight = { source = "WEIGHT", type = "number" }
+

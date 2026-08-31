@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.1.0",
+  "release": "public-corpus-v0.1.0-rhfs",
+  "tables": {
+    "source_document": {
+      "grain": "one immutable source artifact",
+      "primary_key": ["document_id"],
+      "required": ["source_id", "source_release", "file_name", "sha256", "byte_size"]
+    },
+    "source_asset_bridge": {
+      "grain": "one authentic source property",
+      "primary_key": ["source_id", "analytical_asset_id"],
+      "required": ["native_grain", "source_asset_token"],
+      "privacy": "native identifier tokenized; native value prohibited"
+    },
+    "annual_cost_observation": {
+      "grain": "one property and calendar-year maintenance observation",
+      "primary_key": ["cost_observation_id"],
+      "foreign_keys": {"analytical_asset_id": "source_asset_bridge.analytical_asset_id"},
+      "amount_type": "nonnegative decimal in source currency",
+      "zero_rule": "explicit response evidence required"
+    },
+    "property_period_snapshot": {
+      "grain": "one authentic property at one cutoff",
+      "primary_key": ["snapshot_id"],
+      "foreign_keys": {"analytical_asset_id": "source_asset_bridge.analytical_asset_id"},
+      "missingness": "blank value plus explicit per-field missing reason"
+    },
+    "property_period_label": {
+      "grain": "one snapshot and modeling task",
+      "primary_key": ["snapshot_id", "task_id"],
+      "foreign_keys": {"snapshot_id": "property_period_snapshot.snapshot_id"},
+      "target_imputation": "prohibited",
+      "wapda_claim": "is_exact_wapda_target must be false for public proxy labels"
+    },
+    "record_lineage": {
+      "grain": "one derived record-to-source-row link",
+      "primary_key": ["lineage_id"],
+      "foreign_keys": {"document_id": "source_document.document_id"},
+      "required": ["target_table", "target_key", "source_row_locator", "source_row_sha256", "transform_version"]
+    }
+  }
+}

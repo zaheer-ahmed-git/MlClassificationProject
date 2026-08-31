@@ -1,0 +1,408 @@
+registry_version = "1.0"
+
+[[sources]]
+source_id = "rhfs_2024"
+title = "2024 Rental Housing Finance Survey Public Use File"
+publisher = "United States Census Bureau"
+release = "v1.0"
+status = "approved_core"
+role = "primary_public_annual_cost"
+label_fidelity = "same-property_annual_maintenance_proxy"
+geography = "United States"
+native_grain = "rental_property"
+calendar = "calendar_year_2023"
+currency = "USD"
+access_class = "open_download"
+license_status = "redistribution_review_pending"
+redistribution_allowed = false
+native_key = "CONTROLPUF"
+sentinels = ["-8", "-9"]
+landing_url = "https://www.census.gov/programs-surveys/rhfs/data/puf/2024/microdata.html"
+
+[[sources.artifacts]]
+name = "rhfspuf2024.csv"
+url = "https://www2.census.gov/programs-surveys/rhfs/data/public-use-files/2024/rhfspuf2024.csv"
+sha256 = "dcc7c2331337bf10e3fa90027a30508c20268b7087d2c61d7e88a6dfbb3bf96f"
+bytes = 9678277
+media_type = "text/csv"
+
+[[sources.artifacts]]
+name = "Codebook-Version-1.pdf"
+url = "https://www2.census.gov/programs-surveys/rhfs/data/public-use-files/2024/Codebook-Version-1.pdf"
+sha256 = "256b937b639b9a12510fa4eb2e85e1c4e6346b641ed2d61d701b33e5cdeffdea"
+bytes = 1117643
+media_type = "application/pdf"
+
+[[sources.artifacts]]
+name = "2024-RHFS-PUF-Version-Document.pdf"
+url = "https://www2.census.gov/programs-surveys/rhfs/data/public-use-files/2024/2024-RHFS-PUF-Version-Document.pdf"
+sha256 = "f48ee7eb992bfd7e2c2e66b83e670cc7f8c7c69be51dbaeecb86856c2db5ca11"
+bytes = 188833
+media_type = "application/pdf"
+
+[[sources]]
+source_id = "ahs_2015_2023"
+title = "American Housing Survey 2015-2023 Public Use Files"
+publisher = "United States Census Bureau and HUD"
+release = "official_2015_2023"
+status = "approved_proxy"
+role = "separate_longitudinal_forecast_proxy"
+label_fidelity = "biennial_routine_cost_proxy"
+geography = "United States"
+native_grain = "housing_unit_wave"
+calendar = "biennial"
+currency = "USD"
+access_class = "open_download"
+license_status = "redistribution_review_pending"
+redistribution_allowed = false
+native_key = "CONTROL"
+sentinels = ["-6", "-7", "-8", "-9", "N"]
+landing_url = "https://www.census.gov/programs-surveys/ahs/data/2023.html"
+
+[[sources.artifacts]]
+name = "2015_AHS_National_PUF_v3.1_CSV.zip"
+url = "https://www2.census.gov/programs-surveys/ahs/2015/2015%20AHS%20National%20PUF%20v3.1%20CSV.zip"
+sha256 = "cacf86b94fa953a7a7b3ea3f2f55b0f2520464dcd01f689af4726dd9e670bc9e"
+bytes = 158423707
+media_type = "application/zip"
+
+[[sources.artifacts]]
+name = "2015_AHS_Mini_Codebook_National.pdf"
+url = "https://www.census.gov/data-tools/demo/data/uccb/ahsdict/minicodebooks/ahs_mini_2015National.pdf"
+sha256 = "3ebee0bdd4976dc2937eaaee4ad326add3917edddcc03a2b411ee55c5447bb2d"
+bytes = 42786
+media_type = "application/pdf"
+
+[[sources.artifacts]]
+name = "2015_AHS_Definitions.pdf"
+url = "https://www2.census.gov/programs-surveys/ahs/2015/2015%20AHS%20Definitions.pdf"
+sha256 = "342806ced986eb790f83f6b256fcd974efd60bb1427dc2f6ce32b21e51ebc987"
+bytes = 1051345
+media_type = "application/pdf"
+
+[[sources.artifacts]]
+name = "2015_AHS_Historical_Changes.pdf"
+url = "https://www2.census.gov/programs-surveys/ahs/2015/2015%20AHS%20Historical%20Changes.pdf"
+sha256 = "44ce6e2123034bd765541baaeb762e201b806fd1d6fa8b3d9a331fafbc9d5daf"
+bytes = 474374
+media_type = "application/pdf"
+
+[[sources.artifacts]]
+name = "2015_AHS_Items_Booklet.pdf"
+url = "https://www2.census.gov/programs-surveys/ahs/2015/2015%20AHS%20Items%20Booklet.pdf"
+sha256 = "37024fbc3531f3890cc84998c579916855a24549d193982c3fb487d109a30a2a"
+bytes = 375310
+media_type = "application/pdf"
+
+[[sources.artifacts]]
+name = "2017_AHS_National_PUF_v3.1_CSV.zip"
+url = "https://www2.census.gov/programs-surveys/ahs/2017/2017%20AHS%20National%20PUF%20v3.1%20CSV.zip"
+sha256 = "58927493c9012be61b00345b5d6e2533ae5678891e6d041b755455b18b7eb97b"
+bytes = 152660010
+media_type = "application/zip"
+
+[[sources.artifacts]]
+name = "2017_AHS_Mini_Codebook_National.pdf"
+url = "https://www.census.gov/data-tools/demo/data/uccb/ahsdict/minicodebooks/ahs_mini_2017National.pdf"
+sha256 = "0b38d10eae0a042c568bea16375337275e07b083b16d35708ecc0006bd081dce"
+bytes = 41626
+media_type = "application/pdf"
+
+[[sources.artifacts]]
+name = "2017_AHS_Definitions.pdf"
+url = "https://www2.census.gov/programs-surveys/ahs/2017/2017%20AHS%20Definitions.pdf"
+sha256 = "732661554cad57568565f84f2b00ad130a8cabed94372c4743cac4fcdbcf6524"
+bytes = 1025155
+media_type = "application/pdf"
+
+[[sources.artifacts]]
+name = "2017_AHS_Historical_Changes.pdf"
+url = "https://www2.census.gov/programs-surveys/ahs/2017/2017%20AHS%20Historical%20Changes.pdf"
+sha256 = "96746052bc5c85b361f1caf125203829791e4b98b0c0beacfe4bd3965ec7d6d4"
+bytes = 348180
+media_type = "application/pdf"
+
+[[sources.artifacts]]
+name = "2017_AHS_Items_Booklet.pdf"
+url = "https://www2.census.gov/programs-surveys/ahs/2017/2017%20AHS%20Items%20Booklet.pdf"
+sha256 = "ed3312895ded1dcfbce3a9905856b3511e955a3d4feffcf069c0aef9ae9483ed"
+bytes = 2558689
+media_type = "application/pdf"
+
+[[sources.artifacts]]
+name = "2019_AHS_National_PUF_v1.1_CSV.zip"
+url = "https://www2.census.gov/programs-surveys/ahs/2019/2019%20AHS%20National%20PUF%20v1.1%20CSV.zip"
+sha256 = "6d2eb9e81b896e6bbeb1b7a8e4a099ed2598ddeb0323af04f810b76b1746def9"
+bytes = 145866601
+media_type = "application/zip"
+
+[[sources.artifacts]]
+name = "2019_AHS_Mini_Codebook_National.pdf"
+url = "https://www.census.gov/data-tools/demo/data/uccb/ahsdict/minicodebooks/ahs_mini_2019National.pdf"
+sha256 = "37432c891315f30a9f4dbf6eaf8d26252af6dc53b30db398484555a0df689ae2"
+bytes = 42452
+media_type = "application/pdf"
+
+[[sources.artifacts]]
+name = "2019_AHS_Definitions.pdf"
+url = "https://www2.census.gov/programs-surveys/ahs/2019/2019%20AHS%20Definitions.pdf"
+sha256 = "dcafeab911d6b49efdc4e690dfd48e5de9c26e536bb95231055793f717a17a43"
+bytes = 1023245
+media_type = "application/pdf"
+
+[[sources.artifacts]]
+name = "2019_AHS_Historical_Changes.pdf"
+url = "https://www2.census.gov/programs-surveys/ahs/2019/2019%20AHS%20Historical%20Changes.pdf"
+sha256 = "7101f39b76f7779e52164799fc93ec9ed8d60a5c3c7ff68b735c1d5b82a54d02"
+bytes = 467304
+media_type = "application/pdf"
+
+[[sources.artifacts]]
+name = "2019_AHS_Items_Booklet.pdf"
+url = "https://www2.census.gov/programs-surveys/ahs/2019/2019%20AHS%20Items%20Booklet.pdf"
+sha256 = "6e8f8e9a2500e1e2921e41d3e4c8c39bca2fee6b3318b6048dc5872fbfb08255"
+bytes = 1938976
+media_type = "application/pdf"
+
+[[sources.artifacts]]
+name = "2021_AHS_National_PUF_v1.0_CSV.zip"
+url = "https://www2.census.gov/programs-surveys/ahs/2021/2021%20AHS%20National%20PUF%20v1.0%20CSV.zip"
+sha256 = "73a464118cfa4bbf962c22bde4e7e40349f6673eafc381d0b257b0d309c2d622"
+bytes = 148971616
+media_type = "application/zip"
+
+[[sources.artifacts]]
+name = "2021_AHS_Mini_Codebook_National.pdf"
+url = "https://www.census.gov/data-tools/demo/data/uccb/ahsdict/minicodebooks/ahs_mini_2021National.pdf"
+sha256 = "a27b33e0b145e71892067dccefd9f528ae0a8b273de1828ba0d56a82454a6d1e"
+bytes = 40138
+media_type = "application/pdf"
+
+[[sources.artifacts]]
+name = "2021_AHS_Definitions.pdf"
+url = "https://www2.census.gov/programs-surveys/ahs/2021/2021%20AHS%20Definitions.pdf"
+sha256 = "e463b7f889b9e713448be1ddcc8db5a85680448b2436ec0401db11f6343dee7d"
+bytes = 1019390
+media_type = "application/pdf"
+
+[[sources.artifacts]]
+name = "2021_AHS_Historical_Changes.pdf"
+url = "https://www2.census.gov/programs-surveys/ahs/2021/2021%20AHS%20Historical%20Changes.pdf"
+sha256 = "363754d9f6b55edf42ee1a4f3136f3aa8e0b81d1220db55f02989ca97ee8d13d"
+bytes = 286942
+media_type = "application/pdf"
+
+[[sources.artifacts]]
+name = "2021_AHS_Items_Booklet.pdf"
+url = "https://www2.census.gov/programs-surveys/ahs/2021/2021%20AHS%20Items%20Booklet.pdf"
+sha256 = "e80fc9399817bd0016bf03f329fa5d088979060c40fe61ea3cd871f454d43c48"
+bytes = 1598355
+media_type = "application/pdf"
+
+[[sources.artifacts]]
+name = "2023_AHS_National_PUF_v1.1_CSV.zip"
+url = "https://www2.census.gov/programs-surveys/ahs/2023/2023%20AHS%20National%20PUF%20v1.1%20CSV.zip"
+sha256 = "720aaa18198f23f1d25b19630ba97105394f653f32acf6e3f907235bd2d73ac0"
+bytes = 129491194
+media_type = "application/zip"
+
+[[sources.artifacts]]
+name = "2023_AHS_Mini_Codebook_National.pdf"
+url = "https://www.census.gov/data-tools/demo/data/uccb/ahsdict/minicodebooks/ahs_mini_2023National.pdf"
+sha256 = "1a93dfb6021424d7617e96d93f9a0df4a14a574d94ee695e0289a5aae83a90f9"
+bytes = 45361
+media_type = "application/pdf"
+
+[[sources.artifacts]]
+name = "2023_AHS_Definitions.pdf"
+url = "https://www2.census.gov/programs-surveys/ahs/2023/2023%20AHS%20Definitions.pdf"
+sha256 = "dc037d61fcae13571215c86e02b9c6f8ca5145bae4c9062648bbd412d5b95f46"
+bytes = 951112
+media_type = "application/pdf"
+
+[[sources.artifacts]]
+name = "2023_AHS_Historical_Changes.pdf"
+url = "https://www2.census.gov/programs-surveys/ahs/2023/2023%20AHS%20Historical%20Changes.pdf"
+sha256 = "0b1bbdca143d02c60c1c36ea4fb35472c78d2a3ba6f8bd78cce9ececfc2ebb9b"
+bytes = 246187
+media_type = "application/pdf"
+
+[[sources.artifacts]]
+name = "2023_AHS_Items_Booklet.pdf"
+url = "https://www2.census.gov/programs-surveys/ahs/2023/2023__AHS_Items_Booklet.pdf"
+sha256 = "bc19d033ec14f5d083e6636af35487ca27239bdc4210c5d639ee87200a91d492"
+bytes = 1699483
+media_type = "application/pdf"
+
+[[sources.artifacts]]
+name = "AHS_Codebook_Reference.pdf"
+url = "https://www2.census.gov/programs-surveys/ahs/guidance/user-guide/ahs_cdbk_reference.pdf"
+sha256 = "31690f2f6914506bf31f40a6cc5529ec0a77d96683abaf34a69a1df2c26b183f"
+bytes = 396875
+media_type = "application/pdf"
+
+[[sources.artifacts]]
+name = "Sample_Case_History_File_2015_to_2023.pdf"
+url = "https://www2.census.gov/programs-surveys/ahs/documentation/Sample%20Case%20History%20File%202015%20to%202023.pdf"
+sha256 = "5d0458efc9e55cb49fdddc8d62b7ad627238571d82e2181a4c0ec81742e0169c"
+bytes = 1362939
+media_type = "application/pdf"
+
+[[sources.artifacts]]
+name = "Sample_Case_History_File_2015_to_2023.zip"
+url = "https://www2.census.gov/programs-surveys/ahs/2021/Sample%20Case%20History%20File%202015%20to%202023.zip"
+sha256 = "9777b20145a6d75c868e0c5192c0a8f8a7da89aec27f4f7d2acf6a9495d2c984"
+bytes = 1434906
+media_type = "application/zip"
+
+[[sources]]
+source_id = "pakistan_hies_2024_25"
+title = "Pakistan Household Integrated Economic Survey"
+publisher = "Pakistan Bureau of Statistics"
+release = "assessment_pending"
+status = "candidate_reference"
+role = "pakistan_context"
+label_fidelity = "household_consumption_reference_only"
+geography = "Pakistan"
+native_grain = "household"
+calendar = "survey_period"
+currency = "PKR"
+access_class = "access_to_verify"
+license_status = "review_pending"
+redistribution_allowed = false
+native_key = "discover_from_codebook"
+sentinels = []
+landing_url = "https://www.pbs.gov.pk/content/household-integrated-economic-survey-hies"
+
+[[sources]]
+source_id = "english_housing_survey"
+title = "English Housing Survey"
+publisher = "UK Department for Levelling Up, Housing and Communities"
+release = "assessment_pending"
+status = "candidate_reference"
+role = "condition_reference"
+label_fidelity = "modeled_repair_need_reference_only"
+geography = "England"
+native_grain = "dwelling_survey"
+calendar = "survey_year"
+currency = "GBP"
+access_class = "registration_gated"
+license_status = "review_pending"
+redistribution_allowed = false
+native_key = "discover_from_codebook"
+sentinels = []
+landing_url = "https://www.gov.uk/guidance/english-housing-survey-datasets-and-bespoke-analysis"
+
+[[sources]]
+source_id = "nyc_hpd_charges"
+title = "NYC Housing Preservation and Development Charges"
+publisher = "NYC Department of Housing Preservation and Development"
+release = "assessment_pending"
+status = "candidate"
+role = "auxiliary_emergency_cost_label"
+label_fidelity = "government_intervention_partial_cost"
+geography = "New York City"
+native_grain = "building_charge"
+calendar = "event_date"
+currency = "USD"
+access_class = "open_api"
+license_status = "review_pending"
+redistribution_allowed = false
+native_key = "discover_from_dictionary"
+sentinels = []
+landing_url = "https://data.cityofnewyork.us/Housing-Development/Charges/cp6j-7bjj"
+
+[[sources]]
+source_id = "nyc_hpd_complaints"
+title = "NYC HPD Complaints"
+publisher = "NYC Department of Housing Preservation and Development"
+release = "assessment_pending"
+status = "candidate"
+role = "prior_event_feature"
+label_fidelity = "no_label"
+geography = "New York City"
+native_grain = "building_complaint"
+calendar = "event_date"
+currency = "not_applicable"
+access_class = "open_api"
+license_status = "review_pending"
+redistribution_allowed = false
+native_key = "discover_from_dictionary"
+sentinels = []
+landing_url = "https://data.cityofnewyork.us/Housing-Development/Complaints-since-08-01-2015/hy7d-p4qz"
+
+[[sources]]
+source_id = "nyc_hpd_violations"
+title = "NYC Housing Violations"
+publisher = "NYC Department of Housing Preservation and Development"
+release = "assessment_pending"
+status = "candidate"
+role = "prior_condition_feature"
+label_fidelity = "no_label"
+geography = "New York City"
+native_grain = "building_violation"
+calendar = "event_date"
+currency = "not_applicable"
+access_class = "open_api"
+license_status = "review_pending"
+redistribution_allowed = false
+native_key = "discover_from_dictionary"
+sentinels = []
+landing_url = "https://data.cityofnewyork.us/Housing-Development/Housing-Violations/xrru-zj8y"
+
+[[sources]]
+source_id = "nyc_pluto"
+title = "NYC Primary Land Use Tax Lot Output"
+publisher = "NYC Department of City Planning"
+release = "assessment_pending"
+status = "candidate"
+role = "building_attribute_feature"
+label_fidelity = "no_label"
+geography = "New York City"
+native_grain = "tax_lot"
+calendar = "release_vintage"
+currency = "not_applicable"
+access_class = "open_download"
+license_status = "review_pending"
+redistribution_allowed = false
+native_key = "BBL"
+sentinels = []
+landing_url = "https://www.nyc.gov/site/planning/data-maps/open-data/dwn-pluto-mappluto.page"
+
+[[sources]]
+source_id = "nasa_power"
+title = "NASA POWER Daily Meteorology"
+publisher = "NASA"
+release = "request_snapshot"
+status = "candidate_context"
+role = "weather_context"
+label_fidelity = "no_label"
+geography = "global"
+native_grain = "coordinate_day"
+calendar = "daily"
+currency = "not_applicable"
+access_class = "open_api"
+license_status = "review_pending"
+redistribution_allowed = false
+native_key = "coordinate_date_parameter"
+sentinels = []
+landing_url = "https://power.larc.nasa.gov/docs/services/api/temporal/daily/"
+
+[[sources]]
+source_id = "world_bank_wdi"
+title = "World Development Indicators"
+publisher = "World Bank"
+release = "request_snapshot"
+status = "candidate_context"
+role = "economic_normalization"
+label_fidelity = "no_label"
+geography = "global_country"
+native_grain = "country_indicator_year"
+calendar = "annual"
+currency = "mixed_indicator"
+access_class = "open_api"
+license_status = "cc_by_4_0_verify_series_terms"
+redistribution_allowed = false
+native_key = "country_indicator_year"
+sentinels = []
+landing_url = "https://datahelpdesk.worldbank.org/knowledgebase/articles/889392"

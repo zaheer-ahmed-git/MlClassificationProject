@@ -1,0 +1,56 @@
+# Secrets and machine-local configuration
+.env
+.env.*
+!.env.example
+secrets/
+*.pem
+*.key
+
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Packaging and build output
+build/
+dist/
+*.egg-info/
+
+# Notebooks and editor files
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Agent and editor tooling kept on the workstation
+.agents/
+.codex/
+.cursor/
+.cursorignore
+.cursorindexingignore
+
+# Restricted source and derived data
+DatasetOfCAIP/
+data/raw/
+data/interim/
+data/processed/
+private-fixtures/
+
+# Generated experiments, models, and private reports
+artifacts/
+reports/generated/
+reports/private/
+
+# Runtime output
+logs/
+tmp/
+*.log

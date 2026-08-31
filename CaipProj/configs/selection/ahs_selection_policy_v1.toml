@@ -1,0 +1,36 @@
+policy_id = "ahs-selection-policy-v1"
+policy_contract_version = "1.0.0"
+task_id = "future_routine_cost_proxy_v1"
+dataset_release = "public-corpus-v0.2.0-ahs"
+split_id = "ahs-grouped-temporal-v1"
+preprocessor_id = "ahs-training-fold-v1"
+experiment_id = "ahs-baselines-models-v1"
+frozen_on = "2026-08-12"
+
+primary_objective = "validation_mae"
+required_secondary_reports = ["pre_2023_cap_sensitivity_test_mae", "primary_test_high_cost_f1"]
+high_cost_threshold_usd = 1428.0
+
+[promotion]
+eligible_systems = ["linear_regression", "random_forest", "gradient_boosting"]
+require_validation_mae_win = true
+require_sensitivity_mae_leader_or_tie = true
+primary_test_mae_alone_insufficient = true
+high_cost_f1_alone_insufficient = true
+
+[fallback]
+primary_estimator = "type_median"
+high_cost_reference = "prior_cost"
+
+[authorization]
+promote_fitted_model_from_ahs_baselines_models_v1 = false
+hyperparameter_search = false
+reported_primary_estimator = "type_median"
+reported_high_cost_reference = "prior_cost"
+
+[claim_boundary]
+is_wapda_data = false
+is_validated_wasc_or_wapda_forecast = false
+rhfs_labels_merged = false
+nyc_hpd_opened = false
+distribution = "local-analysis-only"

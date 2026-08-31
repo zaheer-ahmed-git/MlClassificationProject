@@ -1,0 +1,40 @@
+{
+  "schema_version": "0.2.0-ahs",
+  "release": "public-corpus-v0.2.0-ahs",
+  "modeling_view": "ahs_only_separate_from_rhfs",
+  "task_id": "future_routine_cost_proxy_v1",
+  "grain": "one eligible AHS housing unit at an earlier biennial wave linked by CONTROL to a later-wave routine-maintenance response",
+  "temporal_contract": {
+    "feature_time": "earlier AHS wave only",
+    "label_time": "next adjacent AHS wave, two calendar years later",
+    "label_field": "MAINTAMT",
+    "label_meaning": "annual routine maintenance costs in a typical year",
+    "forecast_limit": "proxy task; not an observed WAPDA next-12-month outcome"
+  },
+  "response_limits": {
+    "2017": 10000,
+    "2019": 10000,
+    "2021": 10000,
+    "2023": 100000,
+    "comparability_rule": "retain source_response_maximum_usd and label_wave_year; evaluate sensitivity to the 2023 instrument change"
+  },
+  "eligibility": {
+    "earlier_wave": "INTSTATUS=1 and usable YRBUILT, UNITSIZE, TOTROOMS, BATHROOMS, BLD",
+    "later_wave": "INTSTATUS=1, TENURE in {1,2}, and nonnegative usable MAINTAMT",
+    "minimum_distinct_linked_units": 500,
+    "target_imputation": "prohibited"
+  },
+  "privacy": {
+    "native_identifier": "CONTROL is never exported",
+    "analytical_identifier": "deterministic namespace hash token"
+  },
+  "distribution": "local-analysis-only until license review",
+  "tables": {
+    "source_document": {"primary_key": ["document_id"]},
+    "source_asset_bridge": {"primary_key": ["source_id", "analytical_asset_id"]},
+    "annual_cost_observation": {"primary_key": ["cost_observation_id"]},
+    "property_period_snapshot": {"primary_key": ["snapshot_id"]},
+    "property_period_label": {"primary_key": ["snapshot_id", "task_id"]},
+    "record_lineage": {"primary_key": ["lineage_id"]}
+  }
+}
